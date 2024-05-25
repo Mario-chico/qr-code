@@ -1,0 +1,44 @@
+---
+import Article from "../components/Article.astro"
+import QR from "../components/QR.astro"
+import Text from "../components/Text.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+		<Article>
+			<QR/>
+			<Text/>
+		</Article>
+		
+	</body>
+</html>
+
+<style is:global>
+	html{
+		background-color: #D5E1EF;
+		text-align: center;
+	}
+	h2{
+		color: #1F314F;
+		font-weight: 700;
+	}
+	p{
+		color: #7D889E;
+	}
+	div{
+		width: 288px;
+    height: 288px;
+	}
+	img{
+		border-radius: 15px;
+	}
+</style>

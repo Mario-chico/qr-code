@@ -4,5 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   image: {
     domains: ["res.cloudinary.com"],
-  }
+  },
+  site: 'https://mario-chico.github.io',
+  base: '/qr-code',
 });

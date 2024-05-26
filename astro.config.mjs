@@ -6,5 +6,4 @@ export default defineConfig({
     domains: ["res.cloudinary.com"],
   },
   site: 'https://mario-chico.github.io',
-  base: '/qr-code',
 });

@@ -1,31 +1,27 @@
 ---
+import Layout from "../Layouts/Layout.astro"
 import Article from "../components/Article.astro"
-import QR from "../components/QR.astro"
+import Info from "../components/Info.astro"
 import Text from "../components/Text.astro"
+import User from "../components/User.astro"
+import Blogimage from "../svg/blogimage.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
+<Layout pageName="Blog Preview Card">
 		<h1>Astro</h1>
-		<Article>
-			<QR/>
-			<Text/>
+		<Article class="blogpre">
+			<Blogimage class="svgimg"/>
+			<Text>
+				<Info/>
+			</Text>
+			<User/>
 		</Article>
-		
-	</body>
-</html>
+</Layout>
 
 <style is:global>
 	html{
 		background-color: #D5E1EF;
-		text-align: center;
+		text-align: left;
 	}
 	h2{
 		color: #1F314F;
@@ -36,10 +32,17 @@ import Text from "../components/Text.astro"
 		font-weight: 200;
 	}
 	div{
-		width: 288px;
-    height: 288px;
+		width: auto;
+		margin-block: 1.5rem;
 	}
 	img{
 		border-radius: 15px;
+	}
+	.svgimg{
+		border-radius: 15px;
+	}
+	.blogpre{
+		height: 497px;
+    width: 336px;
 	}
 </style>

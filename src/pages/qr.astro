@@ -1,0 +1,24 @@
+---
+import Layout from "../Layouts/Layout.astro"
+import Article from "../components/Article.astro"
+import QR from "../components/QR.astro"
+import Text from "../components/Text.astro"
+---
+
+<Layout pageName="Blog Preview Card">
+		<h1>Astro</h1>
+		<Article class="qr">
+			<QR/>
+			<Text/>
+		</Article>
+</Layout>
+
+<style>
+  body{
+    background-color: #D5E1EF;;
+  }
+  .qr{
+    height: 497px;
+    width: 320px;
+  }
+</style>

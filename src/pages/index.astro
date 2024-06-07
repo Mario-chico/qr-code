@@ -1,53 +1,76 @@
 ---
+import { Image } from "astro:assets"
 import Layout from "../Layouts/Layout.astro"
 import Article from "../components/Article.astro"
-import Info from "../components/Info.astro"
 import Text from "../components/Text.astro"
-import User from "../components/User.astro"
-import Blogimage from "../svg/blogimage.astro"
+import Avatar from "../svg/avatar-jessica.jpeg"
+import Links from "../components/Links.astro"
 ---
 
 <Layout pageName="Blog Preview Card">
 		<h1>Astro</h1>
-		<Article class="blogpre">
-			<Blogimage class="svgimg"/>
+		<Article class="links">
+			<Image src={Avatar} loading="eager" width={102} height={102} alt="Jessica photo on view side" />
 			<Text>
-				<Info/>
-				<h2 slot="title">HTML & CSS foundations</h2>
-        <p slot="paragraph">These languages are the backbone of every website, defining structure, content, and presentation. </p>
+				<h2 slot="title">Elchico</h2>
+				<h3 slot="location">Mérida, México</h3>
+        <p slot="paragraph">"Front-end developer and avid reader." </p>
 			</Text>
-			<User/>
-		</Article>
+			<div class="links-container">
+				<Links class="link" title="Github" link="https://github.com/elchico"/>
+				<Links class="link" title="Frontend Mentor" link="https://github.com/elchico"/>
+				<Links class="link" title="LinkedIn" link="https://github.com/elchico"/>
+				<Links class="link" title="Twitter" link="https://github.com/elchico"/>
+				<Links class="link" title="Instagram" link="https://github.com/elchico"/>
+			</div>
+	</Article>
 </Layout>
 
 <style is:global>
 	html{
-		background-color: #F4D04E;
-		text-align: left;
+		font-family: 'Inter', sans-serif;
+		background-color: #000;
+		text-align: center;
 	}
-	article{
-		border: 2px solid #000;
-		filter: drop-shadow(9px 9px 0px #000000);
+	.links{
+		background-color: #181817;
+		width: 100%;
+		max-width: 330px;
+		padding: 2.5rem !important;
+	}
+	p, h2, h3{
+		margin: 0;
+	}
+	h3 {
+		color: #bdc009;
+		margin-bottom: 10px;
+		font-weight: 700;
 	}
 	h2{
-		font-family: 'Figtree', sans-serif;
-		font-size: 20px;
-		font-weight: 800;
-		color: #111111;
+		font-weight: 900;
+		color: white;
 	}
+	
 	p{
-		font-family: "Figtree", sans-serif;
 		color: #7D889E;
 		font-weight: 500;
 		font-size: calc(13px + 0.24vw);
 		line-height: 1.5;
 	}
-	p, h2{
-		margin: 0;
+	.links-container{
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		width: 100%;
+		margin: 0 auto;
 	}
-	span{
-		color: #111111;
-		font-family: 'Figtree', sans-serif;
+	.link{
+		text-decoration: none;
+		background-color: #53524c;
+		padding-block: 10px;
+		border-radius: 7px;
+		color: white;
+		font-weight: 600;
 	}
 	div{
 		width: auto;
@@ -57,36 +80,9 @@ import Blogimage from "../svg/blogimage.astro"
 		gap: 12px;
 	}
 	img{
-		border-radius: 15px;
+		border-radius: 50%;
 	}
-	.svgimg{
-		border-radius: 15px;
-		width: 279px;
-	}
-	.blogpre{
-    width: 279px;
-	}
-	@font-face {
-  font-family: 'FigtreeItalic';
-  src: url('/fonts/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Figtree';
-  src: url('/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 	@media screen and (min-width: 429px) {
-		.blogpre{
-			width: 336px;
-		}
-		.svgimg{
-			width: 336px;
-		}
+		
 	}
 </style>

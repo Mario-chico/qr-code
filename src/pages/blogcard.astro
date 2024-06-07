@@ -1,0 +1,77 @@
+---
+import Layout from "../Layouts/Layout.astro"
+import Article from "../components/Article.astro"
+import Info from "../components/Info.astro"
+import Text from "../components/Text.astro"
+import User from "../components/User.astro"
+import Blogimage from "../svg/blogimage.astro"
+---
+<Layout pageName="Blog Preview Card">
+  <h1>Astro</h1>
+  <Article class="blogpre">
+    <Blogimage class="svgimg"/>
+    <Text>
+      <Info/>
+      <h2 slot="title">HTML & CSS foundations</h2>
+      <p slot="paragraph">These languages are the backbone of every website, defining structure, content, and presentation. </p>
+    </Text>
+    <User/>
+  </Article>
+</Layout>
+
+<style is:global>
+html{
+  background-color: #F4D04E;
+  text-align: left;
+}
+article{
+  background-color: white;
+  border: 2px solid #000;
+  filter: drop-shadow(9px 9px 0px #000000);
+}
+h2{
+  font-family: 'Figtree', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111111;
+}
+p{
+  font-family: "Figtree", sans-serif;
+  color: #7D889E;
+  font-weight: 500;
+  font-size: calc(13px + 0.24vw);
+  line-height: 1.5;
+}
+p, h2{
+  margin: 0;
+}
+span{
+  color: #111111;
+  font-family: 'Figtree', sans-serif;
+}
+div{
+  width: auto;
+  margin-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+img{
+  border-radius: 15px;
+}
+.svgimg{
+  border-radius: 15px;
+  width: 279px;
+}
+.blogpre{
+  width: 279px;
+}
+@media screen and (min-width: 429px) {
+  .blogpre{
+    width: 336px;
+  }
+  .svgimg{
+    width: 336px;
+  }
+}
+</style>

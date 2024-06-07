@@ -1,4 +1,5 @@
 ---
+import Links from "../components/Links.astro"
 let pageName = Astro.props.pageName
 ---
 <html lang="en">
@@ -9,6 +10,13 @@ let pageName = Astro.props.pageName
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageName}</title>
 	</head>
+	<header>
+		<nav>
+			<Links title="Inicio" link="/"/>
+			<Links title="Blog Card Preview" link="/blogcard"/>
+			<Links title="QR" link="/qr"/>
+		</nav>
+	</header>
 	<body>
     <slot/>
 		
@@ -19,5 +27,25 @@ let pageName = Astro.props.pageName
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+	}
+	@font-face {
+		font-family: 'FigtreeItalic';
+		src: url('/fonts/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Figtree';
+		src: url('/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Inter';
+		src: url('/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+		font-style: normal;
+		font-display: swap;
 	}
 </style>

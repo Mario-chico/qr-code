@@ -1,0 +1,11 @@
+---
+interface Props {
+  class?: string
+  title: string
+  link: string
+}
+const { title, link } = Astro.props
+---
+<a href={link} class={Astro.props.class}>
+  {title}
+</a>

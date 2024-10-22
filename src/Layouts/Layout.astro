@@ -1,5 +1,7 @@
 ---
-import Links from "../components/Links.astro"
+import Header from "@sections/Header.astro"
+
+
 let pageName = Astro.props.pageName
 ---
 <html lang="en">
@@ -10,14 +12,9 @@ let pageName = Astro.props.pageName
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageName}</title>
 	</head>
-	<header>
-		<nav>
-			<Links title="Inicio" link="/"/>
-			<Links title="Blog Card Preview" link="/blogcard"/>
-			<Links title="QR" link="/qr"/>
-		</nav>
-	</header>
+	
 	<body>
+		<Header />
     <slot/>
 		
 	</body>

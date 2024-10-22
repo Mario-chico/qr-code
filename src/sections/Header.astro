@@ -1,0 +1,23 @@
+---
+import Links from "@components/Links.astro"
+---
+<header>
+  <nav>
+    <Links title="Inicio" link="/"/>
+    <Links title="Blog Card Preview" link="/blogcard"/>
+    <Links title="QR" link="/qr"/>
+  </nav>
+</header>
+
+<style>
+  nav{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    width: inherit;
+    margin: 10px 0 0 0;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+</style>

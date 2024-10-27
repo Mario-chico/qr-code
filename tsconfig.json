@@ -6,6 +6,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/Layouts/*"],
       "@sections/*": ["src/sections/*"],
+      "@img/*": ["/public/img/*"],
     }
   }
 }

@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro"
+import { Image } from "astro:assets"
+import Omellete from "@img/image-omelette.webp"
+---
+
+<Layout pageName="Recipe Card">
+  <div class="recipe">
+    <Image src={Omellete} alt="Omellete" />
+    <h1>Simplete Omellete Recipe</h1>
+    <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+  </div>
+</Layout>
+
+<style>
+  .recipe{
+    max-width: 1312px;
+    margin: 0 auto;
+  }
+</style>

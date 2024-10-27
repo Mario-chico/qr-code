@@ -15,7 +15,9 @@ let pageName = Astro.props.pageName
 	
 	<body>
 		<Header />
-    <slot/>
+		<main>
+			<slot/>
+		</main>
 		
 	</body>
 </html>
@@ -42,6 +44,12 @@ let pageName = Astro.props.pageName
 	@font-face {
 		font-family: 'Inter';
 		src: url('/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Outfit';
+		src: url('/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
 		font-style: normal;
 		font-display: swap;
 	}

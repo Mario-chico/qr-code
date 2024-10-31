@@ -1,0 +1,22 @@
+---
+interface Props {
+  class?: string
+  title: string
+  items: { prep_title: string; text: string }[]
+}
+
+const { title, items } = Astro.props
+---
+
+<section class={Astro.props.class}>
+  <h2>{title}</h2>
+  <ul>
+    {
+      items.map((item) => 
+      <li>
+        <span>{item.prep_title}:</span>
+        <span>{item.text}</span>
+      </li>)
+    }
+  </ul>
+</section>

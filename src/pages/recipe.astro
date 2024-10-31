@@ -1,15 +1,26 @@
 ---
 import Layout from "@layouts/Layout.astro"
+import Menu from "@components/Menu-Overview.astro"
 import { Image } from "astro:assets"
 import Omellete from "@img/image-omelette.webp"
 ---
 
 <Layout pageName="Recipe Card">
-  <div class="recipe">
+  <article class="recipe">
     <Image src={Omellete} alt="Omellete" />
     <h1>Simplete Omellete Recipe</h1>
     <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
-  </div>
+    
+    <Menu 
+      class="menu" 
+      title="Preparation time" 
+      items={[
+        {prep_title:"Total", text:" Approximately 10 minutes"},
+        {prep_title:"Preparation", text:" 5 minutes"},
+        {prep_title:"Cooking", text:" 5 minutes"},
+      ]}/>
+      <h2>otra cosa</h2>
+  </article>
 </Layout>
 
 <style>
@@ -17,4 +28,32 @@ import Omellete from "@img/image-omelette.webp"
     max-width: 1312px;
     margin: 0 auto;
   }
+  :global(.menu){
+    background-color: #fff7fc;
+    padding: 1rem;
+    width: 75dvw;
+    max-width: 1280px;
+    margin: 0 auto;
+    h2{
+      color: #661b3d;
+    }
+    ul{
+      font-size: 13px;
+    }
+    li{
+      margin-top: 10px;
+    }
+    li > span + span{
+      font-family: 'Outfit', sans-serif;
+      color: #58524e;
+      line-height: 1rem;
+      word-break: break-all;
+    }
+    ul:nth-child(2) > li > span:nth-child(1){
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      color: #5f564f;
+    }
+  }
+
 </style>

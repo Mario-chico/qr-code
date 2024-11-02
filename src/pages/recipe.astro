@@ -7,7 +7,7 @@ import Omellete from "@img/image-omelette.webp"
 
 <Layout pageName="Recipe Card">
   <article class="recipe">
-    <Image src={Omellete} alt="Omellete" />
+    <Image src={Omellete} alt="Omellete" width={412} height={300}/>
     <h1>Simplete Omellete Recipe</h1>
     <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
     
@@ -15,11 +15,63 @@ import Omellete from "@img/image-omelette.webp"
       class="menu" 
       title="Preparation time" 
       items={[
-        {prep_title:"Total", text:" Approximately 10 minutes"},
-        {prep_title:"Preparation", text:" 5 minutes"},
-        {prep_title:"Cooking", text:" 5 minutes"},
-      ]}/>
-      <h2>otra cosa</h2>
+        {prep_title:"Total:", text:" Approximately 10 minutes"},
+        {prep_title:"Preparation:", text:" 5 minutes"},
+        {prep_title:"Cooking:", text:" 5 minutes"},
+      ]}
+      listType="ul"
+    />  
+    <Menu 
+      class="ingredient" 
+      title="Ingredients" 
+      items={[
+        {text:"2-3 large eggs"},
+        {text:"Salt, to taste"},
+        {text:"Pepper, to taste"},
+        {text:"1 tablespoon of butter or oil"},
+        {text:"Optional fillings: cheese, diced vegetables, cooked meats, herbs"},
+      ]}
+      listType="ul"
+    />
+    <hr>
+    <Menu 
+      class="instructions" 
+      title="Instructions" 
+      items={[
+        {prep_title: "Beat the eggs:", text: "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture."},
+        {prep_title: "Heat the pan:", text: "Place a non-stick frying pan over medium heat and add butter or oil."},
+        {prep_title: "Cook the omelette:", text: "Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface."},
+        {prep_title: "Add fillings (optional):", text: "When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette."},
+        {prep_title: "Fold and serve:", text: "As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate."},
+        {prep_title: "Enjoy:", text: "Serve hot, with additional salt and pepper if needed."},
+      ]}
+      listType="ol"
+    />
+    <hr>
+    <section>
+      <h2>Nutrition</h2>
+      <table>
+        <caption>The table below shows nutritional values per serving without the additional fillings.</caption>
+        <tbody>
+          <tr>
+            <th>Calories</th>
+            <td>277kcal</td>
+          </tr>
+          <tr>
+            <th>Carbs</th>
+            <td>0g</td>
+          </tr>
+          <tr>
+            <th>Protein</th>
+            <td>20g</td>
+          </tr>
+          <tr>
+            <th>Fat</th>
+            <td>22g</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </article>
 </Layout>
 
@@ -28,6 +80,26 @@ import Omellete from "@img/image-omelette.webp"
     max-width: 1312px;
     margin: 0 auto;
   }
+  h2{
+    color: #7a402a;
+  }
+  table{
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100dvw;
+    margin-bottom: 100px;
+  }
+  tr{
+    border-bottom: 1px solid rgb(160 160 160);
+  }
+  table > tbody > tr:last-child{
+    border-bottom: none;
+  }
+  th,
+  td {
+    padding: 8px 10px;;
+  }
+
   :global(.menu){
     background-color: #fff7fc;
     padding: 1rem;
@@ -55,5 +127,5 @@ import Omellete from "@img/image-omelette.webp"
       color: #5f564f;
     }
   }
-
+  
 </style>

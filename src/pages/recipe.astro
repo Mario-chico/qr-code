@@ -14,7 +14,7 @@ import Omellete from "@img/image-omelette.webp"
       <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
       
       <Menu 
-      class="menu" 
+      class="menu menu__common__styles" 
       title="Preparation time" 
       items={[
         {prep_title:"Total:", text:" Approximately 10 minutes"},
@@ -24,7 +24,7 @@ import Omellete from "@img/image-omelette.webp"
       listType="ul"
       />  
       <Menu 
-      class="ingredient" 
+      class="ingredient menu__common__styles"
       title="Ingredients" 
       items={[
         {text:"2-3 large eggs"},
@@ -37,7 +37,7 @@ import Omellete from "@img/image-omelette.webp"
       />
       <hr>
       <Menu 
-      class="instructions" 
+      class="instructions menu__common__styles" 
       title="Instructions" 
       items={[
         {prep_title: "Beat the eggs:", text: "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture."},
@@ -91,10 +91,12 @@ import Omellete from "@img/image-omelette.webp"
     font-size: 2.5rem;
     word-break: break-word;
     line-height: 0.9;
+    font-family: 'Inter', sans-serif;
   }
   p{
     color: var(--recipe-text-color);
   }
+  
   h2{
     color: #7a402a;
   }
@@ -114,7 +116,38 @@ import Omellete from "@img/image-omelette.webp"
   td {
     padding: 8px 10px;;
   }
+  :global(.menu__common__styles) {
+    h2{
+      font-family: 'Inter', sans-serif;
+      color: #7e483c;
+    }
+    li > span + span{
+      font-family: 'Outfit', sans-serif;
+      color: var(--recipe-text-color);
+      line-height: 1rem;
+      word-break: break-all;
+    }
+    ul > li > span:nth-child(1){
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      color: #5f564f;
+    }
+    ol > li > span:nth-child(1){
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      color: #5f564f;
+    }
+    ul > li::marker, ol > li::marker{
+      color: #7e483c;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      display: inline-block !important;
+      width: 20px;
+    }
+    ol{
 
+    }
+  }
   :global(.menu){
     background-color: #fff7fc;
     padding: 1rem;
@@ -136,17 +169,7 @@ import Omellete from "@img/image-omelette.webp"
       content: "";
       padding-inline-start: 20px;
     }
-    li > span + span{
-      font-family: 'Outfit', sans-serif;
-      color: var(--recipe-text-color);
-      line-height: 1rem;
-      word-break: break-all;
-    }
-    ul:nth-child(2) > li > span:nth-child(1){
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      color: #5f564f;
-    }
+    
   }
   
 </style>

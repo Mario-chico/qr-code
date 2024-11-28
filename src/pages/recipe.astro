@@ -7,14 +7,14 @@ import Omellete from "@img/image-omelette.webp"
 
 <Layout pageName="Recipe Card">
   <article class="recipe">
-    <Image src={Omellete} alt="Omellete" width={412} height={300}/>
+    <Image src={Omellete} alt="Omellete" width={412} height={200}/>
     <div class="recipe-wrapper">
 
       <h1>Simple Omellete Recipe</h1>
       <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
       
       <Menu 
-      class="menu menu__common__styles" 
+      class="preparation menu__common__styles" 
       title="Preparation time" 
       items={[
         {prep_title:"Total:", text:" Approximately 10 minutes"},
@@ -78,27 +78,31 @@ import Omellete from "@img/image-omelette.webp"
     </article>
   </Layout>
   
-  <style>
-    .recipe{
-      max-width: 1312px;
-      margin: 0 auto;
-    }
-    .recipe-wrapper{
-      padding-inline: 2em;
-    }
-    article h1{
+<style>
+  .recipe{
+    max-width: 1312px;
+    margin: 0 auto;
+  }
+  .recipe-wrapper{
+    padding-inline: 2em;
+  }
+  h1, h2{
     text-align: left;
+    font-family: 'Outfit', sans-serif;
+  }
+  article h1{
     font-size: 2.5rem;
     word-break: break-word;
     line-height: 0.9;
-    font-family: 'Inter', sans-serif;
+  }
+  h2{
+    color: #7a402a;
   }
   p{
     color: var(--recipe-text-color);
-  }
-  
-  h2{
-    color: #7a402a;
+    font-family: 'Outfit', sans-serif;
+    word-break: break-word;
+    line-height: 1.5;
   }
   table{
     table-layout: fixed;
@@ -117,6 +121,7 @@ import Omellete from "@img/image-omelette.webp"
     padding: 8px 10px;;
   }
   :global(.menu__common__styles) {
+    box-sizing: border-box;
     h2{
       font-family: 'Inter', sans-serif;
       color: #7e483c;
@@ -148,13 +153,15 @@ import Omellete from "@img/image-omelette.webp"
 
     }
   }
-  :global(.menu){
+  :global(.preparation){
     background-color: #fff7fc;
+    border-radius: 14px;
     padding: 1rem;
     width: 75dvw;
     max-width: 1280px;
     margin: 0 auto;
     h2{
+      font-size: 1.2rem;
       color: #661b3d;
     }
     ul{
